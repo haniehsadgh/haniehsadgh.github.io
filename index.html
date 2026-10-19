@@ -151,6 +151,30 @@
     .job { padding: 1.1rem 1.1rem; }
   }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+/* DIAGRAMS */
+
+  :root { --fig: #eff3f9; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --fig: #111924; } }
+  :root[data-theme="dark"] { --fig: #111924; }
+  .proj .viz { margin-bottom: 0.35rem; }
+
+
+  .viz { margin: 0; background: var(--fig); border-radius: 6px; padding: 8px; }
+  .viz svg { display: block; width: 100%; height: auto; font-family: var(--font-body); }
+  .viz figcaption { font-size: 0.72em; color: var(--muted); margin-top: 4px; }
+  .d-box { fill: var(--surface); stroke: var(--line); stroke-width: 1; }
+  .d-key { fill: var(--surface); stroke: var(--accent); stroke-width: 1.4; }
+  .d-group { fill: none; stroke: var(--accent); stroke-width: 1; stroke-dasharray: 4 3; opacity: 0.8; }
+  .d-chip { fill: var(--accent-soft); }
+  .d-t { fill: var(--ink); font-size: 10.5px; font-weight: 600; }
+  .d-s { fill: var(--muted); font-size: 8.8px; }
+  .d-c { fill: var(--ink); font-size: 9.4px; }
+  .d-m { fill: var(--accent); font-family: var(--font-mono); font-size: 8.2px; letter-spacing: 0.06em; }
+  .d-line { fill: none; stroke: var(--muted); stroke-width: 1.2; }
+  .d-test { fill: none; stroke: var(--accent); stroke-width: 1.3; stroke-dasharray: 3 3; }
+  .d-arrow { fill: var(--muted); }
+
+/* /DIAGRAMS */
 </style>
 
 <style>body{margin:0}img{max-width:100%}</style>
@@ -270,67 +294,48 @@
 
     <section id="projects">
       <div class="head"><p class="eyebrow">Projects</p><h2>Hands-on technical projects</h2></div>
-      <p class="lead" style="font-size:1rem;color:var(--muted)">Built during my BCIT diploma and on my own. Code is on <a href="https://github.com/haniehsadgh">GitHub</a>.</p>
+      <p class="lead" style="font-size:1rem;color:var(--muted)">Built during my BCIT diploma and on my own. Each diagram shows the finished setup. Code is on <a href="https://github.com/haniehsadgh">GitHub</a>.</p>
       <div class="projects">
         <article class="proj">
+          <figure class="viz"><svg viewBox="0 0 360 210" role="img" aria-label="Diagram: Windows Server 2022 with Active Directory on a VMware ESXi host, with iSCSI, DAS, NAS and SAN storage" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah1" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" class="d-arrow"/></marker></defs><rect x="8" y="8" width="344" height="136" rx="8" class="d-group"/><text x="18" y="24" class="d-m">VMWARE ESXI HOST · VSPHERE</text><rect x="18" y="32" width="200" height="104" rx="6" class="d-key"/><text x="28" y="50" class="d-t">Windows Server 2022</text><text x="28" y="63" class="d-s">Active Directory domain</text><rect x="28" y="72" width="84" height="24" rx="4" class="d-chip"/><text x="70.0" y="87.5" text-anchor="middle" class="d-c">OUs</text><rect x="120" y="72" width="88" height="24" rx="4" class="d-chip"/><text x="164.0" y="87.5" text-anchor="middle" class="d-c">Users · Groups</text><rect x="28" y="102" width="180" height="24" rx="4" class="d-chip"/><text x="118.0" y="117.5" text-anchor="middle" class="d-c">Group Policy Objects (GPOs)</text><rect x="228" y="32" width="54" height="104" rx="6" class="d-box"/><text x="255.0" y="88.0" text-anchor="middle" class="d-t">VM</text><rect x="290" y="32" width="54" height="104" rx="6" class="d-box"/><text x="317.0" y="88.0" text-anchor="middle" class="d-t">VM</text><path d="M180 144 V152" class="d-line"/><path d="M56 152 H308" class="d-line"/><path d="M56 152 V160" class="d-line"/><path d="M140 152 V160" class="d-line"/><path d="M224 152 V160" class="d-line"/><path d="M308 152 V160" class="d-line"/><rect x="18" y="160" width="76" height="26" rx="4" class="d-chip"/><text x="56.0" y="176.5" text-anchor="middle" class="d-c">iSCSI</text><rect x="102" y="160" width="76" height="26" rx="4" class="d-chip"/><text x="140.0" y="176.5" text-anchor="middle" class="d-c">DAS</text><rect x="186" y="160" width="76" height="26" rx="4" class="d-chip"/><text x="224.0" y="176.5" text-anchor="middle" class="d-c">NAS</text><rect x="270" y="160" width="76" height="26" rx="4" class="d-chip"/><text x="308.0" y="176.5" text-anchor="middle" class="d-c">SAN</text><text x="18" y="203" class="d-m">STORAGE CONFIGURED</text></svg></figure>
           <div class="proj-top"><h3>Windows Server &amp; Active Directory</h3><span class="dates">2024</span></div>
           <p class="kind">Systems administration</p>
-          <ul class="points">
-            <li>Deployed Windows Server 2022 on physical and virtual machines.</li>
-            <li>Managed users, groups, OUs, and Group Policy Objects.</li>
-            <li>Ran multiple VMs on VMware ESXi, managed through vSphere.</li>
-            <li>Configured iSCSI, DAS, NAS, and SAN storage.</li>
-          </ul>
+          <ul class="points"><li>Deployed Windows Server 2022 on physical and virtual machines.</li><li>Managed users, groups, OUs, and Group Policy Objects.</li><li>Ran multiple VMs on VMware ESXi, managed through vSphere.</li><li>Configured iSCSI, DAS, NAS, and SAN storage.</li></ul>
           <ul class="chips"><li>Windows Server</li><li>Active Directory</li><li>GPOs</li><li>VMware</li></ul>
         </article>
         <article class="proj">
+          <figure class="viz"><svg viewBox="0 0 360 210" role="img" aria-label="Diagram: two routers with dynamic routing, DHCP and NAT, a workstation subnet and a web server subnet" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" class="d-arrow"/></marker></defs><rect x="44" y="8" width="88" height="22" rx="11" class="d-box"/><text x="88.0" y="23.0" text-anchor="middle" class="d-t">Internet</text><path d="M88 30 V46" class="d-line" marker-end="url(#ah2)"/><text x="94" y="42" class="d-m">NAT</text><rect x="40" y="48" width="96" height="38" rx="6" class="d-key"/><text x="88.0" y="65.0" text-anchor="middle" class="d-t">Router A</text><text x="88.0" y="78.0" text-anchor="middle" class="d-s">DHCP · NAT</text><rect x="224" y="48" width="96" height="38" rx="6" class="d-key"/><text x="272.0" y="65.0" text-anchor="middle" class="d-t">Router B</text><text x="272.0" y="78.0" text-anchor="middle" class="d-s">DHCP</text><path d="M136 67 H224" class="d-line"/><text x="180" y="61" text-anchor="middle" class="d-s">dynamic routing</text><path d="M88 86 V104" class="d-line"/><path d="M272 86 V104" class="d-line"/><rect x="16" y="104" width="144" height="72" rx="8" class="d-group"/><text x="26" y="120" class="d-m">SUBNET A</text><rect x="28" y="124" width="56" height="40" rx="6" class="d-box"/><text x="56.0" y="148.0" text-anchor="middle" class="d-t">PC</text><rect x="94" y="124" width="56" height="40" rx="6" class="d-box"/><text x="122.0" y="148.0" text-anchor="middle" class="d-t">PC</text><rect x="200" y="104" width="144" height="72" rx="8" class="d-group"/><text x="210" y="120" class="d-m">SUBNET B</text><rect x="212" y="124" width="120" height="40" rx="6" class="d-key"/><text x="272.0" y="142.0" text-anchor="middle" class="d-t">Web server</text><text x="272.0" y="155.0" text-anchor="middle" class="d-s">test target</text><path d="M122 164 V192 H272 V166" class="d-test" marker-end="url(#ah2)"/><text x="180" y="206" text-anchor="middle" class="d-s">end-to-end connectivity test</text></svg></figure>
           <div class="proj-top"><h3>Route2Domain Network</h3><span class="dates">2024</span></div>
           <p class="kind">Networking</p>
-          <ul class="points">
-            <li>Subnetted the network and assigned IP ranges to each segment.</li>
-            <li>Configured routers with dynamic routing, DHCP, and NAT.</li>
-            <li>Deployed a web server and workstations to test connectivity end to end.</li>
-          </ul>
+          <ul class="points"><li>Subnetted the network and assigned IP ranges to each segment.</li><li>Configured routers with dynamic routing, DHCP, and NAT.</li><li>Deployed a web server and workstations to test connectivity end to end.</li></ul>
           <ul class="chips"><li>Subnetting</li><li>Routing</li><li>DHCP</li><li>NAT</li><li>VirtualBox</li></ul>
         </article>
         <article class="proj">
+          <figure class="viz"><svg viewBox="0 0 360 210" role="img" aria-label="Diagram: Terraform and Ansible building EC2, S3, DynamoDB and IAM on AWS" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah3" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" class="d-arrow"/></marker></defs><rect x="8" y="34" width="84" height="44" rx="6" class="d-key"/><text x="50.0" y="54.0" text-anchor="middle" class="d-t">Terraform</text><text x="50.0" y="67.0" text-anchor="middle" class="d-s">provisions</text><rect x="8" y="96" width="84" height="44" rx="6" class="d-key"/><text x="50.0" y="116.0" text-anchor="middle" class="d-t">Ansible</text><text x="50.0" y="129.0" text-anchor="middle" class="d-s">configures</text><rect x="112" y="8" width="240" height="194" rx="8" class="d-group"/><text x="122" y="24" class="d-m">AWS</text><rect x="124" y="34" width="104" height="44" rx="6" class="d-box"/><text x="176.0" y="54.0" text-anchor="middle" class="d-t">S3</text><text x="176.0" y="67.0" text-anchor="middle" class="d-s">Terraform state</text><rect x="236" y="34" width="104" height="44" rx="6" class="d-box"/><text x="288.0" y="54.0" text-anchor="middle" class="d-t">DynamoDB</text><text x="288.0" y="67.0" text-anchor="middle" class="d-s">state locking</text><rect x="124" y="96" width="104" height="44" rx="6" class="d-box"/><text x="176.0" y="116.0" text-anchor="middle" class="d-t">EC2</text><text x="176.0" y="129.0" text-anchor="middle" class="d-s">instance</text><rect x="236" y="96" width="104" height="44" rx="6" class="d-box"/><text x="288.0" y="116.0" text-anchor="middle" class="d-t">EC2</text><text x="288.0" y="129.0" text-anchor="middle" class="d-s">instance</text><rect x="124" y="152" width="216" height="40" rx="6" class="d-box"/><text x="232.0" y="170.0" text-anchor="middle" class="d-t">IAM</text><text x="232.0" y="183.0" text-anchor="middle" class="d-s">permissions for collaborators</text><path d="M92 56 H122" class="d-line" marker-end="url(#ah3)"/><path d="M92 118 H122" class="d-line" marker-end="url(#ah3)"/></svg></figure>
           <div class="proj-top"><h3>ToDo App on AWS</h3><span class="dates">2023 – 2024</span></div>
           <p class="kind">Cloud infrastructure as code</p>
-          <ul class="points">
-            <li>Provisioned a full web app stack on AWS with Terraform and Ansible.</li>
-            <li>Used S3 for remote Terraform state and DynamoDB for state locking.</li>
-            <li>Set up IAM permissions for project collaborators.</li>
-          </ul>
+          <ul class="points"><li>Provisioned a full web app stack on AWS with Terraform and Ansible.</li><li>Used S3 for remote Terraform state and DynamoDB for state locking.</li><li>Set up IAM permissions for project collaborators.</li></ul>
           <ul class="chips"><li>AWS EC2</li><li>S3</li><li>IAM</li><li>Terraform</li><li>Ansible</li></ul>
         </article>
         <article class="proj">
+          <figure class="viz"><svg viewBox="0 0 360 210" role="img" aria-label="Diagram: Jenkins pipeline to Docker Hub and Kubernetes on Azure running 5 microservices with Kafka, an Nginx dashboard and Grafana" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah4" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" class="d-arrow"/></marker></defs><rect x="8" y="8" width="72" height="36" rx="6" class="d-box"/><text x="44.0" y="30.0" text-anchor="middle" class="d-t">Code push</text><rect x="96" y="8" width="72" height="36" rx="6" class="d-key"/><text x="132.0" y="24.0" text-anchor="middle" class="d-t">Jenkins</text><text x="132.0" y="37.0" text-anchor="middle" class="d-s">test · build</text><rect x="184" y="8" width="72" height="36" rx="6" class="d-box"/><text x="220.0" y="24.0" text-anchor="middle" class="d-t">Docker Hub</text><text x="220.0" y="37.0" text-anchor="middle" class="d-s">images</text><rect x="272" y="8" width="72" height="36" rx="6" class="d-box"/><text x="308.0" y="24.0" text-anchor="middle" class="d-t">Kubernetes</text><text x="308.0" y="37.0" text-anchor="middle" class="d-s">on Azure VMs</text><path d="M80 26 H94" class="d-line" marker-end="url(#ah4)"/><path d="M168 26 H182" class="d-line" marker-end="url(#ah4)"/><path d="M256 26 H270" class="d-line" marker-end="url(#ah4)"/><path d="M308 44 V56" class="d-line"/><rect x="8" y="56" width="344" height="146" rx="8" class="d-group"/><text x="18" y="72" class="d-m">5 MICROSERVICES · DOCKER</text><rect x="18" y="76" width="58" height="34" rx="6" class="d-box"/><text x="47.0" y="97.0" text-anchor="middle" class="d-t">service 1</text><rect x="85" y="76" width="58" height="34" rx="6" class="d-box"/><text x="114.0" y="97.0" text-anchor="middle" class="d-t">service 2</text><rect x="152" y="76" width="58" height="34" rx="6" class="d-box"/><text x="181.0" y="97.0" text-anchor="middle" class="d-t">service 3</text><rect x="219" y="76" width="58" height="34" rx="6" class="d-box"/><text x="248.0" y="97.0" text-anchor="middle" class="d-t">service 4</text><rect x="286" y="76" width="58" height="34" rx="6" class="d-box"/><text x="315.0" y="97.0" text-anchor="middle" class="d-t">service 5</text><path d="M47 110 V122" class="d-line"/><path d="M114 110 V122" class="d-line"/><path d="M181 110 V122" class="d-line"/><path d="M248 110 V122" class="d-line"/><path d="M315 110 V122" class="d-line"/><rect x="18" y="122" width="326" height="24" rx="4" class="d-chip"/><text x="181.0" y="137.5" text-anchor="middle" class="d-c">Kafka + Zookeeper messaging</text><rect x="18" y="156" width="158" height="36" rx="6" class="d-box"/><text x="97.0" y="172.0" text-anchor="middle" class="d-t">Dashboard UI</text><text x="97.0" y="185.0" text-anchor="middle" class="d-s">served by Nginx</text><rect x="186" y="156" width="158" height="36" rx="6" class="d-box"/><text x="265.0" y="172.0" text-anchor="middle" class="d-t">Grafana</text><text x="265.0" y="185.0" text-anchor="middle" class="d-s">user activity monitoring</text></svg></figure>
           <div class="proj-top"><h3>Traffic Analyzer</h3><span class="dates">2024</span></div>
           <p class="kind">Containers, CI/CD, and monitoring</p>
-          <ul class="points">
-            <li>Deployed 5 microservices with Docker and Kubernetes on Azure VMs.</li>
-            <li>Automated testing and deployment with a Jenkins pipeline.</li>
-            <li>Load-tested with JMeter and monitored activity in Grafana.</li>
-          </ul>
+          <ul class="points"><li>Deployed 5 microservices with Docker and Kubernetes on Azure VMs.</li><li>Automated testing and deployment with a Jenkins pipeline.</li><li>Load-tested with JMeter and monitored activity in Grafana.</li></ul>
           <ul class="chips"><li>Docker</li><li>Kubernetes</li><li>Azure</li><li>Jenkins</li><li>Kafka</li></ul>
         </article>
         <article class="proj">
+          <figure class="viz"><svg viewBox="0 0 360 210" role="img" aria-label="Diagram: a Cypress suite of 41 tests covering registration, login, tasks, file uploads, API CRUD and error cases" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah5" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" class="d-arrow"/></marker></defs><rect x="122" y="78" width="116" height="54" rx="8" class="d-key"/><text x="180.0" y="103.0" text-anchor="middle" class="d-t">Cypress E2E suite</text><text x="180.0" y="116.0" text-anchor="middle" class="d-s">41 tests · 39 branches</text><path d="M110 32 L122 105" class="d-line"/><rect x="6" y="12" width="104" height="40" rx="6" class="d-box"/><text x="58.0" y="30.0" text-anchor="middle" class="d-t">Registration</text><text x="58.0" y="43.0" text-anchor="middle" class="d-s">new accounts</text><path d="M110 105 L122 105" class="d-line"/><rect x="6" y="85" width="104" height="40" rx="6" class="d-box"/><text x="58.0" y="103.0" text-anchor="middle" class="d-t">Login</text><text x="58.0" y="116.0" text-anchor="middle" class="d-s">email · Google</text><path d="M110 178 L122 105" class="d-line"/><rect x="6" y="158" width="104" height="40" rx="6" class="d-box"/><text x="58.0" y="176.0" text-anchor="middle" class="d-t">Task management</text><text x="58.0" y="189.0" text-anchor="middle" class="d-s">core workflow</text><path d="M250 32 L238 105" class="d-line"/><rect x="250" y="12" width="104" height="40" rx="6" class="d-box"/><text x="302.0" y="30.0" text-anchor="middle" class="d-t">File uploads</text><text x="302.0" y="43.0" text-anchor="middle" class="d-s">PNG PDF ZIP MP4</text><path d="M250 105 L238 105" class="d-line"/><rect x="250" y="85" width="104" height="40" rx="6" class="d-box"/><text x="302.0" y="103.0" text-anchor="middle" class="d-t">API CRUD</text><text x="302.0" y="116.0" text-anchor="middle" class="d-s">files · tasks · comments</text><path d="M250 178 L238 105" class="d-line"/><rect x="250" y="158" width="104" height="40" rx="6" class="d-box"/><text x="302.0" y="176.0" text-anchor="middle" class="d-t">Error cases</text><text x="302.0" y="189.0" text-anchor="middle" class="d-s">duplicates · bad input</text></svg></figure>
           <div class="proj-top"><h3>ZipBoard Automated Testing</h3><span class="dates">2024</span></div>
           <p class="kind">Quality assurance</p>
-          <ul class="points">
-            <li>Wrote 41 automated end-to-end tests across 39 branches in Cypress.</li>
-            <li>Tested APIs for create, read, update, and delete operations.</li>
-            <li>Covered error cases such as bad logins and unsupported file types.</li>
-          </ul>
+          <ul class="points"><li>Wrote 41 automated end-to-end tests across 39 branches in Cypress.</li><li>Tested APIs for create, read, update, and delete operations.</li><li>Covered error cases such as bad logins and unsupported file types.</li></ul>
           <ul class="chips"><li>Cypress</li><li>E2E Testing</li><li>API Testing</li></ul>
         </article>
         <article class="proj">
+          <figure class="viz"><svg viewBox="0 0 360 210" role="img" aria-label="Diagram: browser to an Express MVC app with Passport.js login, controllers, database, EJS views and jsPDF export" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah6" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" class="d-arrow"/></marker></defs><rect x="8" y="76" width="64" height="58" rx="6" class="d-box"/><text x="40.0" y="103.0" text-anchor="middle" class="d-t">Browser</text><text x="40.0" y="116.0" text-anchor="middle" class="d-s">user</text><rect x="88" y="8" width="264" height="194" rx="8" class="d-group"/><text x="98" y="24" class="d-m">NODE.JS + EXPRESS · MVC</text><rect x="100" y="34" width="116" height="44" rx="6" class="d-key"/><text x="158.0" y="54.0" text-anchor="middle" class="d-t">Passport.js</text><text x="158.0" y="67.0" text-anchor="middle" class="d-s">login · sessions</text><rect x="100" y="96" width="116" height="44" rx="6" class="d-key"/><text x="158.0" y="116.0" text-anchor="middle" class="d-t">Controllers</text><text x="158.0" y="129.0" text-anchor="middle" class="d-s">reminder CRUD</text><rect x="232" y="96" width="108" height="44" rx="6" class="d-box"/><text x="286.0" y="116.0" text-anchor="middle" class="d-t">Database</text><text x="286.0" y="129.0" text-anchor="middle" class="d-s">user reminders</text><rect x="100" y="154" width="116" height="40" rx="6" class="d-box"/><text x="158.0" y="172.0" text-anchor="middle" class="d-t">EJS views</text><text x="158.0" y="185.0" text-anchor="middle" class="d-s">rendered pages</text><rect x="232" y="154" width="108" height="40" rx="6" class="d-box"/><text x="286.0" y="172.0" text-anchor="middle" class="d-t">jsPDF</text><text x="286.0" y="185.0" text-anchor="middle" class="d-s">PDF export</text><path d="M72 92 H84 V56 H98" class="d-line" marker-end="url(#ah6)"/><path d="M158 78 V94" class="d-line" marker-end="url(#ah6)"/><path d="M216 118 H230" class="d-line" marker-end="url(#ah6)"/><path d="M158 140 V152" class="d-line" marker-end="url(#ah6)"/><path d="M100 174 H84 V118 H74" class="d-line" marker-end="url(#ah6)"/></svg></figure>
           <div class="proj-top"><h3><a href="https://github.com/haniehsadgh/ReminderApp">ReminderApp</a></h3><span class="dates">2024 – 2025</span></div>
           <p class="kind">Full-stack web app</p>
-          <ul class="points">
-            <li>Built a reminders app with Node.js, Express, and EJS.</li>
-            <li>Added user login and sessions with Passport.js.</li>
-            <li>Acted as product owner for an Agile team of 5.</li>
-          </ul>
+          <ul class="points"><li>Built a reminders app with Node.js, Express, and EJS.</li><li>Added user login and sessions with Passport.js.</li><li>Acted as product owner for an Agile team of 5.</li></ul>
           <ul class="chips"><li>Node.js</li><li>Express</li><li>Passport.js</li><li>Agile</li></ul>
         </article>
       </div>
